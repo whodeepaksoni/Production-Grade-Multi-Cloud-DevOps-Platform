@@ -40,8 +40,8 @@ pipeline{
                 }
             }    
         }
-    }
-}
+    
+
         stage('image tagging'){
             
             steps{
