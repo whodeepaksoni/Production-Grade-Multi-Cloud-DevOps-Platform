@@ -56,6 +56,5 @@ pipeline{
                 }
             }
         }
-        echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} deployed successfully to production!"; else { echo "Failed to deploy Docker image ${IMAGE_NAME}:${IMAGE_TAG} to production." }
     }            
 }
