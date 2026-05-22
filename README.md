@@ -1,1 +1,2 @@
 This project implements a CI/CD pipeline where Jenkins pulls source code from GitHub, builds a Docker image, pushes it to Docker Hub, and deploys the updated container on a Linux deployment server.
+Integrated Trivy in Jenkins pipeline to scan Docker images for vulnerabilities before pushing images to Docker Hub.
