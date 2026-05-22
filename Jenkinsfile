@@ -21,7 +21,7 @@ pipeline{
             steps{
                 script{
                     echo "Building Docker image ${IMAGE_NAME}:${IMAGE_TAG}..."
-                    sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                    sh "sudo docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                 script{
                     echo "Tagging Docker image ${IMAGE_NAME}:${IMAGE_TAG}..."
-                    sh "docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "sudo docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
@@ -42,7 +42,7 @@ pipeline{
                 script{
                     echo "Pushing Docker image ${IMAGE_NAME}:${IMAGE_TAG} to Docker Hub..."
                     sh "echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin"
-                    sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "sudo docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
@@ -55,7 +55,7 @@ pipeline{
                     echo "removing old Docker containers from production..."
                     sh "docker rm -f ${CONTAINER_NAME} || true"
                     echo "Deploying Docker image ${IMAGE_NAME}:${IMAGE_TAG} to production..."
-                    sh "docker run -d -p 3000:80 --name ${CONTAINER_NAME} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "sudo docker run -d -p 3000:80 --name ${CONTAINER_NAME} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
