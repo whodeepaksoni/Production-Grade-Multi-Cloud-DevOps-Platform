@@ -1,0 +1,1 @@
+This project implements a CI/CD pipeline where Jenkins pulls source code from GitHub, builds a Docker image, pushes it to Docker Hub, and deploys the updated container on a Linux deployment server.
