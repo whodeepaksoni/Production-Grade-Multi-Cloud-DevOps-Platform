@@ -21,7 +21,7 @@ pipeline{
             steps{
                 script{
                     echo "Building Docker image ${IMAGE_NAME}:${IMAGE_TAG}..."
-                    sh "sudo docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                    sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                 script{
                     echo "Tagging Docker image ${IMAGE_NAME}:${IMAGE_TAG}..."
-                    sh "sudo docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
