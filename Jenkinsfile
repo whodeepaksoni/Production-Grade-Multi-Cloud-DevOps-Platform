@@ -25,6 +25,21 @@ pipeline{
                 }
             }
         }
+        stage('Trivy Security Scan') {
+            steps {
+                script {
+                    echo "Scanning Docker image with Trivy..."
+                    trivy image \
+                    --scanners vuln \
+                    --pkg-types os \
+                    --severity CRITICAL \
+                    --exit-code 1 \
+                    ${IMAGE_NAME}:${IMAGE_TAG}
+                }
+            }    
+        }
+    }
+}
         stage('image tagging'){
             
             steps{
