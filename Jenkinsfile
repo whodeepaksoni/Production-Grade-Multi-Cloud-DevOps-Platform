@@ -42,7 +42,7 @@ pipeline{
                 script{
                     echo "Pushing Docker image ${IMAGE_NAME}:${IMAGE_TAG} to Docker Hub..."
                     sh "echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin"
-                    sh "sudo docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
@@ -55,7 +55,7 @@ pipeline{
                     echo "removing old Docker containers from production..."
                     sh "docker rm -f ${CONTAINER_NAME} || true"
                     echo "Deploying Docker image ${IMAGE_NAME}:${IMAGE_TAG} to production..."
-                    sh "sudo docker run -d -p 3000:80 --name ${CONTAINER_NAME} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker run -d -p 3000:80 --name ${CONTAINER_NAME} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
                 }
             }
