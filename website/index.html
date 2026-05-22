@@ -1,1 +1,271 @@
-hi this ping is from container
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinEdge - Smart Fintech Platform</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #111827;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #2563eb);
+      color: white;
+      padding: 25px 8%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 0;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 50px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #dbeafe;
+    }
+
+    .btn {
+      background: #22c55e;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .card {
+      background: white;
+      color: #111827;
+      padding: 30px;
+      border-radius: 20px;
+      width: 330px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+
+    .balance {
+      font-size: 34px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .feature-box h3 {
+      margin-bottom: 12px;
+      color: #2563eb;
+    }
+
+    .stats {
+      background: #0f172a;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stats h2 {
+      color: #22c55e;
+      font-size: 38px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #2563eb, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 70px 8%;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">FinEdge</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Smart Banking for the Digital Future</h1>
+        <p>Manage payments, savings, investments, and business finance from one secure fintech platform.</p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+
+      <div class="card">
+        <h3>Total Balance</h3>
+        <div class="balance">₹2,45,890</div>
+        <p>Monthly Growth: <strong style="color:#22c55e;">+18.5%</strong></p>
+        <hr style="margin:20px 0;">
+        <p>Last Transaction</p>
+        <strong>Amazon Pay - ₹2,499</strong>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <h2>Powerful Fintech Features</h2>
+    <p>Everything you need to manage money securely and easily.</p>
+
+    <div class="features">
+      <div class="feature-box">
+        <h3>Secure Payments</h3>
+        <p>Send and receive money instantly with bank-grade security.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Smart Analytics</h3>
+        <p>Track your expenses, income, and financial growth in real time.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Investment Tracking</h3>
+        <p>Monitor stocks, mutual funds, crypto, and portfolio performance.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Business Wallet</h3>
+        <p>Manage business transactions, invoices, and settlements easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stats">
+    <div>
+      <h2>1M+</h2>
+      <p>Active Users</p>
+    </div>
+    <div>
+      <h2>₹500Cr+</h2>
+      <p>Transactions Processed</p>
+    </div>
+    <div>
+      <h2>99.9%</h2>
+      <p>Secure Uptime</p>
+    </div>
+    <div>
+      <h2>24/7</h2>
+      <p>Customer Support</p>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Start Your Digital Finance Journey</h2>
+    <p>Join thousands of users managing money smarter with FinEdge.</p>
+    <br>
+    <a href="#" class="btn">Create Free Account</a>
+  </section>
+
+  <footer>
+    <p>© 2026 FinEdge. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
