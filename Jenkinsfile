@@ -29,12 +29,14 @@ pipeline{
             steps {
                 script {
                     echo "Scanning Docker image with Trivy..."
+                    sh """
                     trivy image \
                     --scanners vuln \
                     --pkg-types os \
                     --severity CRITICAL \
                     --exit-code 1 \
                     ${IMAGE_NAME}:${IMAGE_TAG}
+                    """
                 }
             }    
         }
